@@ -12,7 +12,7 @@ This is empty on purpose! Your code to build the resume will go here.
 
 
 var bio={
-  name:"万欣茹 Cheryl Wan",
+  name:"Cheryl Wan",
   role:"数据分析师 Data Analyst",
   contacts:{
   email:"xinruwan@163.com",
@@ -23,7 +23,7 @@ var bio={
 },
   biopic:"images/me.jpg",
   welcomeMsg:"Hello! This is my first Javascript project!",
-  skills:["Python","Matlab","MS Office"]
+  skills:["Python","MS Office","Matlab"]
 };
 
 //Course 1 practices:
@@ -53,19 +53,34 @@ var bio={
 // var formattedSchoolName=HTMLschoolName.replace("%data%",education.school);
 // $("#main").append(formattedSchoolName);
 var work={
-  "jobs":[{dates:"2015.08",
+  "jobs":[{dates:"Since 2015.08",
   employer:"九江职业技术学院",
   title:"教务处 质量管理",
   location:"江西 九江",
   description:"质量监控、课程改革和信息化建设"},
   {
-    dates:"2010.07-2103.08",
+    dates:"2010.05-2103.08",
     employer:"Marvell Asia Pte Ltd",
     title:"Product Test Engineer",
     location:"Singapore",
     description:"..."
     }
   ]
+}
+
+for(var i=0; i<work.jobs.length;i++){
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+  var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[i].title);
+  var formattedEmployerTitle=formattedEmployer+formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);
+  var formattedLoc=HTMLworkLocation.replace("%data%",work.jobs[i].location);
+  var formattedDates=HTMLworkDates.replace("%data%",work.jobs[i].dates);
+  var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[i].description);
+  $(".work-entry:last").append(formattedDates);
+  $(".work-entry:last").append(formattedDescription);
+
+
 }
 
 var projects={
@@ -116,3 +131,32 @@ var education={
     }
   ]
 }
+
+//course 5
+//
+$("#header").append(HTMLheaderName.replace("%data%",bio.name));
+if(bio.skills.length>0){
+  $("#header").append(HTMLskillsStart);
+  for(var i=0;i<bio.skills.length;i++){
+    var formattedSkill=HTMLskills.replace("%data%",bio.skills[i]);
+    $("#header").append(formattedSkill);
+  }
+}
+
+// record click location.
+$(document).click(function(loc){
+  var x=loc.pageX;
+  var y=loc.pageY;
+  logClicks(x,y);
+});
+
+//created an international name button
+
+function inName(name){
+  name=name.split(" ");
+  name[1]=name[1].toUpperCase();
+  name[0]=name[0].slice(0,1).toUpperCase()+ name[0].slice(1).toLowerCase();
+  return name[0]+" "+name[1];
+}
+
+$("#main").append(internationalizeButton);
