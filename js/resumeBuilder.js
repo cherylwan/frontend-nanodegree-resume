@@ -18,14 +18,15 @@ var bio={
   email:"xinruwan@163.com",
   mobile:"+86-18720177650",
   github:"cherylwan",
-  location:"江西 九江"
+  location:"江西 九江",
+  wechat:"cheryl-wan"
 },
-  pictureURL:"images/me.jpg",
+  biopic:"images/me.jpg",
   welcomeMsg:"Hello! This is my first Javascript project!",
   skills:["Python","Matlab","MS Office"]
 };
 
-
+//Course 1 practices:
 // var formattedName=HTMLheaderName.replace("%data%",bio.name);
 // var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
 //
@@ -46,45 +47,72 @@ var bio={
 //
 // var formattedWelcomeMsg=HTMLwelcomeMsg.replace("%data%",bio.welcomeMsg);
 // $("#header").append(formattedWelcomeMsg);
-
-var work={
-  start:"2015.08",
-  employer:"九江职业技术学院",
-  title:"教务处 质量管理",
-  location:"江西 九江",
-  description:"质量监控、课程改革和信息化建设"
-}
-
 // var formattedWorkTitle=HTMLworkTitle.replace("%data%",work['title']);
 // $("#workExperience").append(formattedWorkTitle);
 
+// var formattedSchoolName=HTMLschoolName.replace("%data%",education.school);
+// $("#main").append(formattedSchoolName);
+var work={
+  "jobs":[{dates:"2015.08",
+  employer:"九江职业技术学院",
+  title:"教务处 质量管理",
+  location:"江西 九江",
+  description:"质量监控、课程改革和信息化建设"},
+  {
+    dates:"2010.07-2103.08",
+    employer:"Marvell Asia Pte Ltd",
+    title:"Product Test Engineer",
+    location:"Singapore",
+    description:"..."
+    }
+  ]
+}
+
+var projects={
+  "projects":[
+    {
+      title: "CP908/CP909",
+      dates:"2013",
+      description:"...",
+      images:"..."
+    },
+  {
+    title:"CP940/CP955",
+    dates:"2012",
+    description:"...",
+    images:"..."
+  }]
+}
+
+
 var education={
-  "school":[
+  "schools":[
     {
       name:"南洋理工大学",
-      year:2010,
+      dates:2010,
       degree:"Masters",
-      major:"Signal Processing",
-      location:"新加坡"
+      major:["Signal Processing"],
+      location:"新加坡",
+      url:"..."
     },
   {
     name:"南方医科大学",
-    year:2009,
+    dates:2009,
     degree:"BA",
-    major:"生物医学工程",
-    location:"中国广州"
+    major:["生物医学工程(信息工程方向)"],
+    location:"中国广州",
+    url:"..."
   }],
   onlineCourses:[
     {
-      course:"intro to python",
+      title:"intro to python",
+      school:"Coursera",
+      url:"..."
+    },
+    {
+      title:"From Excel to MySQL",
       school:"Coursera",
       url:"..."
     }
   ]
-
-
-
 }
-//
-// var formattedSchoolName=HTMLschoolName.replace("%data%",education.school);
-// $("#main").append(formattedSchoolName);
